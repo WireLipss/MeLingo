@@ -50,15 +50,19 @@ with tab2:
         with st.spinner("Kitabını tarıyorum, özel 10 soru hazırlıyorum..."):
             prompt = f"""
             Seçilen kitap metni: {kitap_metni[:15000]}
+            
+            ÖNEMLİ KURAL: Hazırlayacağın tüm cümleler ve kelimeler KESİNLİKLE yukarıdaki İngilizce metinden alınmalı ve orijinal İNGİLİZCE dilinde olmalıdır. Kesinlikle Türkçe çeviri yapma!
+            
             Bu metinden, akademik değeri olan cümleleri seçerek 10 adet boşluk doldurma sorusu hazırla.
-            Her cümlenin boşluk olan yerine '___' koy.
+            Her İngilizce cümlenin boşluk olan yerine '___' koy.
+            
             Lütfen çıktıyı KESİNLİKLE şu formatta ver (araya '|||' koymayı unutma, tam 3 parça olmalı):
             
-            [Sadece Sorular - 1'den 10'a kadar numaralandırılmış]
+            [Sadece İngilizce Sorular - 1'den 10'a kadar numaralandırılmış]
             |||
-            [Sadece Cevap Kelimeleri - Sadece virgülle ayrılmış 10 adet kelime yaz, başka hiçbir açıklama yapma]
+            [Sadece İngilizce Cevap Kelimeleri - Sadece virgülle ayrılmış 10 adet İngilizce kelime yaz, başka hiçbir açıklama yapma]
             |||
-            [Cevap Anahtarı - 1'den 10'a kadar cevaplar]
+            [Cevap Anahtarı - 1'den 10'a kadar İngilizce cevaplar]
             """
             
             cevap = model.generate_content(prompt).text
